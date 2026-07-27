@@ -16,11 +16,11 @@
 - [x] `src/components/motifs/RingsOfConsentMotif.tsx`
 
 ## Phase 3: Page Overhauls
-- [ ] `src/app/page.tsx` (Home): Integrate HeroBridgeMotif, apply alternating section rhythm.
-- [ ] `src/app/get-support/page.tsx`: Create intake framing, integrate CircleOfSupportMotif.
-- [ ] `src/app/schools/page.tsx`: Early response messaging, integrate SchoolsPathwayMotif.
-- [ ] `src/app/community/page.tsx`: Create (replaces churches), integrate VillageTableMotif.
-- [ ] `src/app/privacy/page.tsx`: Create, integrate PrivacyWindowMotif and RingsOfConsentMotif.
+- [x] `src/app/page.tsx` (Home): Integrate HeroBridgeMotif, apply alternating section rhythm.
+- [x] `src/app/get-support/page.tsx`: Create intake framing, integrate CircleOfSupportMotif.
+- [x] `src/app/schools/page.tsx`: Early response messaging, integrate SchoolsPathwayMotif.
+- [x] `src/app/community/page.tsx`: Create (replaces churches), integrate VillageTableMotif.
+- [x] `src/app/privacy/page.tsx`: Create, integrate PrivacyWindowMotif and RingsOfConsentMotif.
 
 ## Final Steps
 - [ ] Verify build (`npm run build`).
