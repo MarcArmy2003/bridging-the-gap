@@ -1,0 +1,137 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  PARENT
+  COUNSELOR
+  ADMIN
+  SRO
+}
+
+model User {
+  id           String         @id @default(uuid())
+  email        String         @unique
+  password     String
+  firstName    String
+  lastName     String
+  role         UserRole
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  
+  // Relations
+  guardianships Guardianship[] // Parents have guardianships
+  assignedCases Case[]         @relation("CaseAssignee") // Counselors/SROs assigned to cases
+}
+
+model Student {
+  id           String         @id @default(uuid())
+  firstName    String
+  lastName     String
+  dateOfBirth  DateTime
+  gradeLevel   Int
+  studentId    String         @unique // School student ID
+  isActive     Boolean        @default(true)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  
+  // Relations
+  guardianships Guardianship[]
+  cases        Case[]
+}
+
+model Guardianship {
+  id                String   @id @default(uuid())
+  userId            String   // Parent/Guardian
+  studentId         String
+  relationshipType  String   // "parent", "guardian", "foster_parent"
+  ferpaConsent      Boolean  @default(false) // FERPA consent to share info
+  emergencyContact  Boolean  @default(false)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  // Relations
+  user     User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  student  Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, studentId])
+  @@index([userId])
+  @@index([studentId])
+}
+
+enum CaseStatus {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+  CLOSED
+}
+
+enum CaseSeverity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+model Case {
+  id            String        @id @default(uuid())
+  studentId     String
+  assigneeId    String?       // Counselor or SRO assigned
+  title         String
+  description   String
+  status        CaseStatus    @default(OPEN)
+  severity      CaseSeverity  @default(MEDIUM)
+  isConfidential Boolean      @default(false) // Extra privacy flag
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  resolvedAt    DateTime?
+  
+  // Relations
+  student  Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  assignee User?    @relation("CaseAssignee", fields: [assigneeId], references: [id], onDelete: SetNull)
+  
+  @@index([studentId])
+  @@index([assigneeId])
+  @@index([status])
+}
+
+enum AuditAction {
+  FERPA_VIOLATION
+  CASE_CREATED
+  CASE_UPDATED
+  CASE_VIEWED
+  STUDENT_VIEWED
+  GUARDIANSHIP_CREATED
+}
+
+enum ViolationReason {
+  NO_GUARDIANSHIP
+  NO_FERPA_CONSENT
+  CONFIDENTIAL_CASE_RESTRICTED
+  ROLE_FORBIDDEN
+  STUDENT_INACTIVE
+  CASE_NOT_ASSIGNED
+  RESOURCE_NOT_FOUND
+}
+
+model AuditLog {
+  id            String         @id @default(uuid())
+  action        AuditAction
+  actorUserId   String?
+  entityType    String?        // "Student", "Case", "Guardianship"
+  entityId      String?
+  reasonCode    ViolationReason?
+  message       String?
+  metadata      Json?          // Request details, IP, etc
+  createdAt     DateTime       @default(now())
+  
+  @@index([actorUserId])
+  @@index([action])
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}

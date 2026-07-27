@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body { margin: 0; background: #E8E6E1; }
+  a { color: #F97316; }
+  a:hover { color: #EA6317; }
+</style>
+</helmet>
+<div style="font-family: system-ui, -apple-system, Roboto, sans-serif; min-height: 100vh;">
+
+  <div style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 16px; padding: 10px 20px; background: #1F2937; color: #F9FAFB; font-size: 13px;">
+    <span style="font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-size: 11px; color: #9CA3AF;">Current build — saving-grace-website</span>
+    <div style="display: flex; gap: 6px;">
+      <button type="button" onClick="{{ goHome }}" style="{{ tabHome }}">/</button>
+      <button type="button" onClick="{{ goSchools }}" style="{{ tabSchools }}">/schools</button>
+      <button type="button" onClick="{{ goChurches }}" style="{{ tabChurches }}">/churches</button>
+      <button type="button" onClick="{{ goSupport }}" style="{{ tabSupport }}">/get-support</button>
+      <button type="button" onClick="{{ goApp }}" style="{{ tabApp }}">/app</button>
+    </div>
+  </div>
+
+  <div style="background: #FFFFFF;">
+    <header style="padding: 1.5rem 2rem; border-bottom: 2px solid #E5E7EB; display: flex; justify-content: space-between; align-items: center; background: #FFFFFF; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+      <a href="#" style="text-decoration: none; color: inherit;"><strong style="font-size: 1.5rem; color: #111827; letter-spacing: -0.5px;">Safe Voice</strong></a>
+      <nav style="display: flex; gap: 2rem; align-items: center;">
+        <a href="#" style="color: #111827; text-decoration: none; font-size: 0.95rem; font-weight: 500;">Open the App</a>
+        <a href="#" style="font-weight: 600; text-decoration: none; font-size: 0.95rem; padding: 0.5rem 1rem; background: #F97316; color: #fff; border-radius: 8px;">Get Support</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+        <div style="background: #FFFFFF; min-height: 100vh;">
+          <section style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; align-items: center;">
+            <div>
+              <h1 style="font-size: 2.5rem; font-weight: bold; color: #111827; line-height: 1.2; margin: 0 0 1.5rem;">A Safer, More Supportive School Experience</h1>
+              <p style="font-size: 1.125rem; color: #555; line-height: 1.6; margin: 0 0 2rem;">Safe Voice helps students ask for help, educators respond early, and families stay connected — all in one trusted platform.</p>
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem;">
+                <a href="#" style="background: #F97316; color: #fff; padding: 14px 28px; border-radius: 12px; font-size: 1rem; font-weight: 600; text-decoration: none; display: inline-block;">Get Support</a>
+                <a href="#" style="background: #fff; color: #111827; padding: 14px 28px; border-radius: 12px; font-size: 1rem; border: 2px solid #111827; font-weight: 600; text-decoration: none; display: inline-block;">For Schools</a>
+              </div>
+            </div>
+            <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); background: #F5F1EA; min-height: 350px; display: flex; align-items: center; justify-content: center;">
+              <img src="assets/family-school.svg" alt="Families and schools working together" style="width: 100%; height: auto; display: block;" />
+            </div>
+          </section>
+
+          <section style="max-width: 1200px; margin: 3rem auto; padding: 0 2rem;">
+            <div style="background: #F9FAFB; padding: 2rem; border-radius: 16px; margin-bottom: 2rem;">
+              <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; margin: 0 0 1rem;">What Safe Voice Does</h2>
+              <p style="font-size: 1.05rem; color: #1F2937; line-height: 1.6; margin: 0;">Creates a clear, calm pathway for support before situations escalate. Students ask for help in their own words. Educators respond with care and coordination. Communities stay informed and connected.</p>
+            </div>
+            <div style="background: #fff; border: 2px solid #E5E7EB; padding: 2rem; border-radius: 16px;">
+              <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; margin: 0 0 1.5rem;">What It Is NOT</h2>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                <div>
+                  <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; font-weight: 600; margin: 0 0 0.5rem;">✓ Not surveillance</p>
+                  <p style="font-size: 0.9rem; color: #666; line-height: 1.6; margin: 0;">No tracking. No cameras. Just support.</p>
+                </div>
+                <div>
+                  <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; font-weight: 600; margin: 0 0 0.5rem;">✓ Not punishment</p>
+                  <p style="font-size: 0.9rem; color: #666; line-height: 1.6; margin: 0;">Help, not discipline. Compassion, not consequence.</p>
+                </div>
+                <div>
+                  <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; font-weight: 600; margin: 0 0 0.5rem;">✓ Not replacement</p>
+                  <p style="font-size: 0.9rem; color: #666; line-height: 1.6; margin: 0;">Works alongside counselors, parents, community.</p>
+                </div>
+                <div>
+                  <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; font-weight: 600; margin: 0 0 0.5rem;">✓ Not medical advice</p>
+                  <p style="font-size: 0.9rem; color: #666; line-height: 1.6; margin: 0;">Connects to real professionals for care.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section style="background: #F5F1EA; padding: 3rem 2rem; margin-top: 3rem;">
+            <div style="max-width: 1200px; margin: 0 auto;">
+              <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; text-align: center; color: #111827; margin: 0 0 3rem;">How It Works</h2>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div style="background: #fff; padding: 2rem; border-radius: 16px; border-top: 4px solid #F97316; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                  <div style="font-size: 3rem; margin-bottom: 1rem;">✋</div>
+                  <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 0.75rem;">Students Report</h3>
+                  <p style="font-size: 1rem; color: #666; line-height: 1.6; margin: 0;">A simple, safe way for students to ask for help about anything on their mind — bullying, stress, family issues, mental health.</p>
+                </div>
+                <div style="background: #fff; padding: 2rem; border-radius: 16px; border-top: 4px solid #F97316; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                  <div style="font-size: 3rem; margin-bottom: 1rem;">👂</div>
+                  <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 0.75rem;">Educators Respond</h3>
+                  <p style="font-size: 1rem; color: #666; line-height: 1.6; margin: 0;">Counselors and teachers get alerts, coordinate quickly, and provide appropriate support without judgment.</p>
+                </div>
+                <div style="background: #fff; padding: 2rem; border-radius: 16px; border-top: 4px solid #F97316; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                  <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
+                  <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 0.75rem;">Community Supports</h3>
+                  <p style="font-size: 1rem; color: #666; line-height: 1.6; margin: 0;">Families and community resources connect to help students thrive. Follow-up is tracked and documented.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section style="max-width: 1200px; margin: 3rem auto; padding: 0 2rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; text-align: center; color: #111827; margin: 0 0 3rem;">Built for Trust</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;">
+              <div style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid #E5E7EB; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔒</div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 0.5rem;">Confidential</h3>
+                <p style="font-size: 0.95rem; color: #666; line-height: 1.6; margin: 0;">Student information is protected. You control what gets shared.</p>
+              </div>
+              <div style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid #E5E7EB; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 0.5rem;">Fast Response</h3>
+                <p style="font-size: 0.95rem; color: #666; line-height: 1.6; margin: 0;">Alerts reach the right people immediately. No delays.</p>
+              </div>
+              <div style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid #E5E7EB; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">📱</div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 0.5rem;">Mobile-First</h3>
+                <p style="font-size: 0.95rem; color: #666; line-height: 1.6; margin: 0;">Students can report from anywhere, anytime, safely.</p>
+              </div>
+              <div style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid #E5E7EB; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 0.5rem;">Transparent</h3>
+                <p style="font-size: 0.95rem; color: #666; line-height: 1.6; margin: 0;">Track outcomes, document actions, show impact.</p>
+              </div>
+              <div style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid #E5E7EB; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 0.5rem;">Guided</h3>
+                <p style="font-size: 0.95rem; color: #666; line-height: 1.6; margin: 0;">Simple questions. Compassionate language. No jargon.</p>
+              </div>
+              <div style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid #E5E7EB; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌐</div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 0.5rem;">Connected</h3>
+                <p style="font-size: 0.95rem; color: #666; line-height: 1.6; margin: 0;">Links students to resources: counseling, mentorship, help.</p>
+              </div>
+            </div>
+          </section>
+
+          <section style="background: #F97316; color: #fff; padding: 4rem 2rem; margin-top: 4rem; text-align: center;">
+            <div style="max-width: 800px; margin: 0 auto;">
+              <h2 style="font-size: 2rem; font-weight: bold; margin: 0 0 1rem;">Ready to Support Your Community?</h2>
+              <p style="font-size: 1.1rem; margin: 0 0 2.5rem; line-height: 1.6;">Whether you're a student seeking help, a school district strengthening safety, or a community partner supporting families — Safe Voice is here for you.</p>
+              <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#" style="background: #fff; color: #F97316; padding: 14px 28px; border-radius: 12px; font-size: 1rem; font-weight: 600; text-decoration: none; display: inline-block;">Get Support</a>
+                <a href="#" style="background: transparent; color: #fff; padding: 14px 28px; border-radius: 12px; font-size: 1rem; border: 2px solid #fff; font-weight: 600; text-decoration: none; display: inline-block;">For Schools</a>
+              </div>
+            </div>
+          </section>
+
+          <section style="max-width: 1200px; margin: 4rem auto; padding: 0 2rem; margin-bottom: 4rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; text-align: center; color: #111827; margin: 0 0 3rem;">Why Schools &amp; Communities Choose Safe Voice</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+              <div style="background: #F9FAFB; padding: 2rem; border-radius: 12px; border-left: 4px solid #F97316;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 0.75rem;">Designed by educators</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6; margin: 0;">Not imposed by tech. Shaped by counselors, teachers, and school safety leaders who know the work.</p>
+              </div>
+              <div style="background: #F9FAFB; padding: 2rem; border-radius: 12px; border-left: 4px solid #F97316;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 0.75rem;">Proof of impact</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6; margin: 0;">Early adopters report faster response times, stronger family trust, and documented outcomes.</p>
+              </div>
+              <div style="background: #F9FAFB; padding: 2rem; border-radius: 12px; border-left: 4px solid #F97316;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 0.75rem;">Grant-eligible</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6; margin: 0;">Qualifies for school safety, mental health, and community resilience funding.</p>
+              </div>
+              <div style="background: #F9FAFB; padding: 2rem; border-radius: 12px; border-left: 4px solid #F97316;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 0.75rem;">Clear boundaries</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6; margin: 0;">For community partners: support without overstepping. For schools: coordination without burden.</p>
+              </div>
+              <div style="background: #F9FAFB; padding: 2rem; border-radius: 12px; border-left: 4px solid #F97316;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 0.75rem;">FERPA &amp; HIPAA ready</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6; margin: 0;">Built with privacy and compliance at the core. Your data is protected.</p>
+              </div>
+              <div style="background: #F9FAFB; padding: 2rem; border-radius: 12px; border-left: 4px solid #F97316;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 0.75rem;">Real support included</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6; margin: 0;">Implementation, training, and ongoing guidance — not just software.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isSchools }}" hint-placeholder-val="{{ false }}">
+        <div style="background: #FFFFFF; min-height: 100vh;">
+          <section style="background: #F5F1EA; padding: 3rem 2rem; border-radius: 1.5rem; margin-top: 3rem; margin-bottom: 3rem; text-align: center;">
+            <h1 style="font-size: 3rem; font-weight: 700; line-height: 1.2; color: #F97316; margin: 0 0 2rem;">A Safety &amp; Support Platform Built for Schools</h1>
+            <p style="font-size: 1.2rem; color: #1F2937; line-height: 1.6; margin: 0 0 3rem;">Reduce response time. Strengthen communication. Empower your district to support every student.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
+              <a href="#" style="background: #F97316; color: #FFFFFF; padding: 1rem 2rem; border-radius: 0.75rem; font-size: 1rem; font-weight: 600; text-decoration: none; display: inline-block;">See It In Action</a>
+              <a href="#" style="background: #FFFFFF; color: #F97316; padding: 1rem 2rem; border-radius: 0.75rem; border: 2px solid #F97316; font-size: 1rem; font-weight: 600; text-decoration: none; display: inline-block;">Learn More</a>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 0 auto 3rem; padding: 0 2rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; text-align: center; margin: 0 0 2rem;">The Challenge Every District Faces</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem; border-left: 4px solid #F97316;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1.5rem;">Fragmented Reporting</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Students, parents, and teachers report concerns through different channels—emails, phone calls, forms. Nothing connects.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem; border-left: 4px solid #22C55E;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #22C55E; margin: 0 0 1.5rem;">Slow Response</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Delays in identifying, escalating, and supporting students who need help most.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem; border-left: 4px solid #111827;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 1.5rem;">Workload Burden</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Counselors and safety teams spend hours on coordination instead of direct student support.</p>
+              </div>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 3rem auto; padding: 2rem; background: #F5F1EA; border-radius: 1rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; text-align: center; margin: 0 0 3rem;">How Safe Voice Works</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;">
+              <div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1.5rem; display: flex; align-items: center;"><span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #F97316; color: white; border-radius: 50%; margin-right: 1rem; font-weight: bold; font-size: 0.9rem;">1</span>Report</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">A simple, safe way for students to ask for help. Parents and teachers can report concerns too.</p>
+              </div>
+              <div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1.5rem; display: flex; align-items: center;"><span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #F97316; color: white; border-radius: 50%; margin-right: 1rem; font-weight: bold; font-size: 0.9rem;">2</span>Route</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Reports are immediately categorized and routed to the right team—counselors, safety officers, or administrators.</p>
+              </div>
+              <div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1.5rem; display: flex; align-items: center;"><span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #F97316; color: white; border-radius: 50%; margin-right: 1rem; font-weight: bold; font-size: 0.9rem;">3</span>Manage</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Your team has a single source of truth. Track outcomes, communicate securely, and document everything.</p>
+              </div>
+              <div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1.5rem; display: flex; align-items: center;"><span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #F97316; color: white; border-radius: 50%; margin-right: 1rem; font-weight: bold; font-size: 0.9rem;">4</span>Follow-Up</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">The platform suggests resources, tracks intervention effectiveness, and closes the loop on every case.</p>
+              </div>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 3rem auto; padding: 0 2rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; text-align: center; margin: 0 0 2rem;">Built For Your District</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;">
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">✓ Role-Based Access</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Students, parents, teachers, counselors, SROs, and administrators see only what they need to.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">✓ FERPA &amp; HIPAA Compliant</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Built with privacy, security, and legal compliance at the core.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">✓ No Extra Burden</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Replaces fragmented workflows. Your team works faster, not harder.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">✓ Data &amp; Outcomes</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Track trends, demonstrate impact, and show funders &amp; boards what's working.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">✓ Mobile-First</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Students can report from anywhere—in class, at home, or on the bus.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">✓ Guided Pathways</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Questions adapt based on student responses. No jargon. Simple, supportive language.</p>
+              </div>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 3rem auto; padding: 2rem; background: #F9FAFB; border-radius: 1rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; text-align: center; margin: 0 0 2rem;">For Your Team</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;">
+              <div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1.5rem;">Superintendents &amp; Principals</h3>
+                <ul style="font-size: 1rem; color: #1F2937; margin: 0 0 0 2rem; padding: 0; line-height: 2;">
+                  <li>• Dashboard of all active cases and outcomes</li>
+                  <li>• Compliance documentation automated</li>
+                  <li>• Data for grant applications &amp; board reports</li>
+                  <li>• Reduces liability through systematic response</li>
+                </ul>
+              </div>
+              <div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1.5rem;">School Counselors</h3>
+                <ul style="font-size: 1rem; color: #1F2937; margin: 0 0 0 2rem; padding: 0; line-height: 2;">
+                  <li>• One place to manage all student cases</li>
+                  <li>• Secure messaging with families</li>
+                  <li>• Automated resource recommendations</li>
+                  <li>• More time for direct student support</li>
+                </ul>
+              </div>
+              <div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1.5rem;">Teachers &amp; Staff</h3>
+                <ul style="font-size: 1rem; color: #1F2937; margin: 0 0 0 2rem; padding: 0; line-height: 2;">
+                  <li>• Easy way to report student concerns</li>
+                  <li>• Know students got help (read-only outcomes)</li>
+                  <li>• Peace of mind that system is tracking follow-up</li>
+                </ul>
+              </div>
+              <div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1.5rem;">Safety Teams &amp; SROs</h3>
+                <ul style="font-size: 1rem; color: #1F2937; margin: 0 0 0 2rem; padding: 0; line-height: 2;">
+                  <li>• High-severity threat alerts</li>
+                  <li>• Coordinated response protocols</li>
+                  <li>• Documentation for incident review</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 3rem auto; padding: 0 2rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; text-align: center; margin: 0 0 3rem;">Why Districts Choose Safe Voice</h2>
+            <div style="display: grid; gap: 2rem;">
+              <div style="display: flex; gap: 1.5rem;">
+                <div style="flex-shrink: 0; width: 28px; height: 28px; background: #22C55E; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">✓</div>
+                <div>
+                  <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 1rem;">Designed by educators &amp; counselors</h3>
+                  <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Not imposed by tech—shaped by people who know school safety.</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 1.5rem;">
+                <div style="flex-shrink: 0; width: 28px; height: 28px; background: #22C55E; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">✓</div>
+                <div>
+                  <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 1rem;">Proof of impact</h3>
+                  <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Early adopters report 40% faster response times and stronger family trust.</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 1.5rem;">
+                <div style="flex-shrink: 0; width: 28px; height: 28px; background: #22C55E; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">✓</div>
+                <div>
+                  <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 1rem;">Grant-eligible</h3>
+                  <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Qualifies for school safety, mental health, and community resilience funding.</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 1.5rem;">
+                <div style="flex-shrink: 0; width: 28px; height: 28px; background: #22C55E; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">✓</div>
+                <div>
+                  <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 1rem;">Real support, not just software</h3>
+                  <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Implementation, training, and ongoing guidance included.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 3rem auto; padding: 3rem 2rem; text-align: center;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; margin: 0 0 2rem;">Ready to transform how your district supports students?</h2>
+            <p style="font-size: 1.1rem; color: #1F2937; line-height: 1.6; margin: 0 0 2rem;">See Safe Voice in action. Talk to your leadership team. Let's build a safer, more connected school community together.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
+              <a href="#" style="background: #F97316; color: #FFFFFF; padding: 1rem 2rem; border-radius: 0.75rem; font-size: 1rem; font-weight: 600; text-decoration: none; display: inline-block;">Schedule a Demo</a>
+              <a href="#" style="background: #FFFFFF; color: #F97316; padding: 1rem 2rem; border-radius: 0.75rem; border: 2px solid #F97316; font-size: 1rem; font-weight: 600; text-decoration: none; display: inline-block;">Contact Leadership</a>
+            </div>
+          </section>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isChurches }}" hint-placeholder-val="{{ false }}">
+        <div style="background: #FFFFFF; min-height: 100vh;">
+          <section style="background: #F5F1EA; padding: 3rem 2rem; border-radius: 1.5rem; margin-top: 3rem; margin-bottom: 3rem; text-align: center;">
+            <h1 style="font-size: 3rem; font-weight: 700; line-height: 1.2; color: #F97316; margin: 0 0 2rem;">Supporting Students &amp; Families, Together</h1>
+            <p style="font-size: 1.2rem; color: #1F2937; line-height: 1.6; margin: 0 0 3rem;">Churches and community organizations play a vital role in student safety and wellness. Safe Voice helps you partner with schools in a clear, appropriate, and impactful way.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
+              <a href="#" style="background: #F97316; color: #FFFFFF; padding: 1rem 2rem; border-radius: 0.75rem; font-size: 1rem; font-weight: 600; text-decoration: none; display: inline-block;">Learn More</a>
+              <a href="#" style="background: #FFFFFF; color: #F97316; padding: 1rem 2rem; border-radius: 0.75rem; border: 2px solid #F97316; font-size: 1rem; font-weight: 600; text-decoration: none; display: inline-block;">Home</a>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 0 auto 3rem; padding: 0 2rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; text-align: center; margin: 0 0 2rem;">Why This Matters</h2>
+            <div style="text-align: center;">
+              <p style="font-size: 1.1rem; color: #1F2937; line-height: 1.6; margin: 0 0 2rem;">Students today face unprecedented stress: bullying, isolation, family instability, mental health challenges. Schools work hard, but they cannot do it alone.</p>
+              <p style="font-size: 1.1rem; color: #1F2937; line-height: 1.6; margin: 0 0 2rem;">Churches and community organizations have something schools don't: deep relationships with families, spiritual care, and long-term presence in the community.</p>
+              <p style="font-size: 1.1rem; color: #F97316; line-height: 1.6; font-weight: 600; margin: 0;">Safe Voice creates a safe way for these two institutions to work together—without blurring lines or overstepping roles.</p>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 3rem auto; padding: 2rem; background: #F9FAFB; border-radius: 1rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; text-align: center; margin: 0 0 3rem;">Clear Boundaries (This Matters)</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;">
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1.5rem;">✓ What We DO Support</h3>
+                <ul style="font-size: 1rem; color: #1F2937; margin: 0 0 0 2rem; padding: 0; line-height: 2;">
+                  <li>Spiritual care &amp; guidance</li>
+                  <li>Youth group &amp; mentorship</li>
+                  <li>Family support services</li>
+                  <li>Community resource connections</li>
+                  <li>Prevention education</li>
+                </ul>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 1.5rem;">✗ What We Do NOT Do</h3>
+                <ul style="font-size: 1rem; color: #111827; margin: 0 0 0 2rem; padding: 0; line-height: 2;">
+                  <li>Make clinical diagnoses</li>
+                  <li>Replace school counselors</li>
+                  <li>Make disciplinary decisions</li>
+                  <li>Share student data without consent</li>
+                  <li>Provide therapy or medication</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 3rem auto; padding: 0 2rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; text-align: center; margin: 0 0 3rem;">Partnership Models</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem; border-top: 4px solid #F97316;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1.5rem;">Education &amp; Prevention</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Host parent workshops and youth groups on bullying prevention, mental health, and healthy relationships.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem; border-top: 4px solid #22C55E;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #22C55E; margin: 0 0 1.5rem;">Family Support</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Offer food pantries, financial aid, counseling referrals, and practical help for families in crisis.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem; border-top: 4px solid #F97316;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1.5rem;">Resource Connection</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Link students and families to community resources—mental health services, tutoring, job training—through Safe Voice.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem; border-top: 4px solid #22C55E;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #22C55E; margin: 0 0 1.5rem;">Spiritual Mentorship</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Provide ongoing mentorship, spiritual guidance, and community connection for students who need it most.</p>
+              </div>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 3rem auto; padding: 2rem; background: #F5F1EA; border-radius: 1rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; text-align: center; margin: 0 0 2rem;">A Real Example</h2>
+            <div>
+              <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0 0 1.5rem;"><strong>Emma, age 14, reports on Safe Voice that she's being bullied.</strong></p>
+              <ul style="font-size: 1rem; color: #1F2937; margin: 0 0 2rem 2rem; padding: 0; line-height: 2;">
+                <li>🏫 Her school counselor sees the report, meets with Emma, and documents support.</li>
+                <li>⛪ The counselor also notes: "Emma's church youth leader could help provide stability."</li>
+                <li>📱 With Emma's permission, Safe Voice alerts her church that support might help.</li>
+                <li>✋ The youth leader reaches out—not as a therapist, but as a trusted mentor—and invites Emma to an after-school mentorship group.</li>
+                <li>❤️ Emma has school support AND community support. The bullying stops. She feels less alone.</li>
+              </ul>
+              <p style="font-size: 1rem; color: #6B7280; line-height: 1.6; font-style: italic; margin: 0;">Both institutions did their job. Neither overstepped. Emma got help.</p>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 3rem auto; padding: 0 2rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; text-align: center; margin: 0 0 2rem;">Why Churches Join</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;">
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">💪</div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">Meaningful Impact</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Actually help the students you serve.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤝</div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">Stronger Community</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Build deeper partnerships with schools.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">Transparency</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Know what's happening, with clear boundaries.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🛡️</div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">Clear Roles</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Support students without overstepping.</p>
+              </div>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 3rem auto; padding: 2rem; background: #F9FAFB; border-radius: 1rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; text-align: center; margin: 0 0 3rem;">How to Get Started</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+              <div style="display: flex; gap: 1.5rem;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #F97316; color: white; border-radius: 50%; font-weight: bold; font-size: 1.1rem; flex-shrink: 0;">1</div>
+                <div>
+                  <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 1rem;">Learn</h3>
+                  <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Understand Safe Voice and how community partnerships work.</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 1.5rem;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #F97316; color: white; border-radius: 50%; font-weight: bold; font-size: 1.1rem; flex-shrink: 0;">2</div>
+                <div>
+                  <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 1rem;">Talk to Schools</h3>
+                  <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Reach out to your local superintendent or principal about partnership.</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 1.5rem;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #F97316; color: white; border-radius: 50%; font-weight: bold; font-size: 1.1rem; flex-shrink: 0;">3</div>
+                <div>
+                  <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 1rem;">Sign Agreement</h3>
+                  <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Establish clear boundaries and expectations with your school district.</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 1.5rem;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #F97316; color: white; border-radius: 50%; font-weight: bold; font-size: 1.1rem; flex-shrink: 0;">4</div>
+                <div>
+                  <h3 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin: 0 0 1rem;">Launch Support</h3>
+                  <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Begin identifying and supporting students in partnership with schools.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 3rem auto; padding: 0 2rem; margin-bottom: 3rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; text-align: center; margin: 0 0 2rem;">Questions?</h2>
+            <div style="display: grid; gap: 2rem;">
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">Do we have to use Safe Voice to support students?</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">No. You can partner with schools in many ways. Safe Voice is just one tool that makes partnership clearer and safer.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">What if a student tells us about abuse?</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">The same rules apply: we report to authorities as required by law. Safe Voice doesn't change your mandated reporter obligations.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">Can we share student information with the school?</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Only with student/family permission. Safe Voice requires explicit consent before information is shared.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">What does it cost?</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Safe Voice is free for community partners. Schools may fund the platform.</p>
+              </div>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 3rem auto; padding: 3rem 2rem; text-align: center;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; margin: 0 0 2rem;">Ready to support your community?</h2>
+            <p style="font-size: 1.1rem; color: #1F2937; line-height: 1.6; margin: 0 0 2rem;">Let's work together to build a safer, more connected community where every student gets the support they need.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
+              <a href="#" style="background: #F97316; color: #FFFFFF; padding: 1rem 2rem; border-radius: 0.75rem; font-size: 1rem; font-weight: 600; text-decoration: none; display: inline-block;">Contact Us</a>
+              <a href="#" style="background: #FFFFFF; color: #F97316; padding: 1rem 2rem; border-radius: 0.75rem; border: 2px solid #F97316; font-size: 1rem; font-weight: 600; text-decoration: none; display: inline-block;">For Schools</a>
+            </div>
+          </section>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isSupport }}" hint-placeholder-val="{{ false }}">
+        <div style="background: #FFFFFF; min-height: 100vh;">
+          <section style="background: #F5F1EA; padding: 3rem 2rem; border-radius: 1.5rem; margin-top: 3rem; margin-bottom: 3rem;">
+            <div style="text-align: center;">
+              <h1 style="font-size: 3rem; font-weight: 700; line-height: 1.2; color: #22C55E; margin: 0 0 2rem;">You're Not Alone</h1>
+              <p style="font-size: 1.2rem; color: #1F2937; line-height: 1.6; max-width: 600px; margin: 0 auto 2rem;">If you or someone you know needs support, this platform can help guide you to the right next step.</p>
+              <p style="font-size: 1.1rem; color: #1F2937; line-height: 1.6; margin: 0 0 3rem;">You can ask for help, share concerns, or find guidance in a confidential and supportive way.</p>
+              <a href="#" style="background: #F97316; color: #FFFFFF; padding: 1rem 2rem; border-radius: 0.75rem; font-size: 1.1rem; font-weight: 600; text-decoration: none; display: inline-block;">Open the App</a>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 0 auto 3rem; padding: 0 2rem;">
+            <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem; margin-bottom: 2rem;">
+              <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; margin: 0 0 1.5rem;">How It Works</h2>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                <div>
+                  <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">Step 1: Tell Us</h3>
+                  <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Share what's going on in your own words. No judgment.</p>
+                </div>
+                <div>
+                  <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">Step 2: We Guide You</h3>
+                  <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Get personalized guidance and resources based on your situation.</p>
+                </div>
+                <div>
+                  <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1rem;">Step 3: Get Support</h3>
+                  <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Connect with trusted adults, counselors, or community resources.</p>
+                </div>
+              </div>
+            </div>
+            <div style="background: #F5F1EA; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+              <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; margin: 0 0 1.5rem;">Your Privacy &amp; Safety</h2>
+              <ul style="font-size: 1rem; color: #1F2937; margin: 0 0 0 2rem; padding: 0; line-height: 2;">
+                <li>✓ Your information is kept confidential</li>
+                <li>✓ You control what you share</li>
+                <li>✓ Adults in your life are notified appropriately (with your input)</li>
+                <li>✓ You get help, not punishment</li>
+              </ul>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 3rem auto; padding: 3rem 2rem; text-align: center;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; margin: 0 0 2rem;">Ready to take the first step?</h2>
+            <a href="#" style="background: #F97316; color: #FFFFFF; padding: 1rem 2rem; border-radius: 0.75rem; font-size: 1.1rem; font-weight: 600; text-decoration: none; display: inline-block;">Open Safe Voice</a>
+          </section>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isApp }}" hint-placeholder-val="{{ false }}">
+        <div style="background: #FFFFFF; min-height: 100vh;">
+          <section style="background: #F5F1EA; padding: 3rem 2rem; border-radius: 1.5rem; margin-top: 3rem; margin-bottom: 3rem;">
+            <div style="text-align: center;">
+              <h1 style="font-size: 3rem; font-weight: 700; line-height: 1.2; color: #F97316; margin: 0 0 2rem;">Safe Voice Platform</h1>
+              <p style="font-size: 1.2rem; color: #1F2937; line-height: 1.6; margin: 0 0 2rem;">Our mobile and web app helps schools, families, and communities support students' social-emotional well-being.</p>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 0 auto 3rem; padding: 0 2rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; text-align: center; margin: 0 0 2rem;">Built for Everyone</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1.5rem;">For Students</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Share concerns, get guidance, and connect with trusted adults in a safe, confidential space.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1.5rem;">For Families</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Stay informed, provide input, and coordinate with schools to support your child's needs.</p>
+              </div>
+              <div style="background: #FFFFFF; padding: 2rem; border: 1px solid #E5E7EB; border-radius: 1rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #F97316; margin: 0 0 1.5rem;">For Schools</h3>
+                <p style="font-size: 1rem; color: #1F2937; line-height: 1.6; margin: 0;">Manage cases, track outcomes, reduce bullying, and create a safer school culture.</p>
+              </div>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 0 auto 3rem; padding: 2rem; background: #F5F1EA; border-radius: 1rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; margin: 0 0 2rem;">What's Inside</h2>
+            <ul style="font-size: 1rem; color: #1F2937; margin: 0 0 0 2rem; padding: 0; line-height: 2.2;">
+              <li><strong>Case Management:</strong> Track concerns from report to resolution</li>
+              <li><strong>Secure Messaging:</strong> Private communication between families and school staff</li>
+              <li><strong>Resource Library:</strong> Access support resources for bullying, mental health, and more</li>
+              <li><strong>Audit Trails:</strong> Transparent documentation of all actions and decisions</li>
+              <li><strong>Analytics:</strong> District-level insights to guide prevention efforts</li>
+            </ul>
+          </section>
+
+          <section style="max-width: 900px; margin: 3rem auto; padding: 3rem 2rem; text-align: center;">
+            <h2 style="font-size: 2rem; font-weight: 700; line-height: 1.3; color: #111827; margin: 0 0 2rem;">Ready to get started?</h2>
+            <p style="font-size: 1.1rem; color: #1F2937; line-height: 1.6; margin: 0 0 2rem;">Safe Voice is available as a web app and will be available on mobile app stores.</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+              <a href="#" style="background: #F97316; color: #FFFFFF; padding: 1rem 2rem; border-radius: 0.75rem; font-size: 1.1rem; font-weight: 600; text-decoration: none; display: inline-block;">Access Web App</a>
+              <a href="#" style="background: #FFFFFF; color: #F97316; padding: 1rem 2rem; border-radius: 0.75rem; border: 2px solid #F97316; font-size: 1.1rem; font-weight: 600; text-decoration: none; display: inline-block;">Back to Guide</a>
+            </div>
+          </section>
+
+          <section style="max-width: 900px; margin: 0 auto 3rem; padding: 3rem 2rem 0; text-align: center; border-top: 1px solid #E5E7EB;">
+            <p style="font-size: 0.95rem; color: #6B7280; line-height: 1.6; margin: 0;">📱 Mobile app store links will be available when officially published.</p>
+          </section>
+        </div>
+      </sc-if>
+
+    </main>
+
+    <footer style="padding: 3rem 2rem; border-top: 2px solid #E5E7EB; margin-top: 4rem; background: #F5F1EA;">
+      <div style="max-width: 1100px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+          <div>
+            <strong style="color: #111827;">Safe Voice</strong>
+            <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;">Confidential reporting for safer communities.</p>
+          </div>
+          <div>
+            <strong style="color: #111827;">For</strong>
+            <ul style="list-style: none; padding: 0; margin: 0.5rem 0 0 0;">
+              <li><a href="#" style="color: #666; text-decoration: none; font-size: 0.9rem;">Schools &amp; Districts</a></li>
+              <li><a href="#" style="color: #666; text-decoration: none; font-size: 0.9rem;">Churches &amp; Communities</a></li>
+              <li><a href="#" style="color: #666; text-decoration: none; font-size: 0.9rem;">Students &amp; Families</a></li>
+            </ul>
+          </div>
+          <div>
+            <strong style="color: #111827;">App</strong>
+            <ul style="list-style: none; padding: 0; margin: 0.5rem 0 0 0;">
+              <li><a href="#" style="color: #666; text-decoration: none; font-size: 0.9rem;">Open Web App</a></li>
+              <li><a href="#" style="color: #666; text-decoration: none; font-size: 0.9rem;">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <div style="border-top: 1px solid #E5E7EB; padding-top: 2rem; text-align: center; color: #999; font-size: 0.85rem;">
+          <p>© 2026 Safe Voice. All rights reserved. Confidential reporting for safer communities.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { page: 'home' };
+  tab(id) {
+    const on = this.state.page === id;
+    return {
+      background: on ? '#F97316' : 'transparent',
+      color: on ? '#fff' : '#D1D5DB',
+      border: '1px solid ' + (on ? '#F97316' : '#4B5563'),
+      borderRadius: 6, padding: '4px 10px', fontSize: 12,
+      fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', cursor: 'pointer'
+    };
+  }
+  go(id) { return () => { this.setState({ page: id }); window.scrollTo(0, 0); }; }
+  renderVals() {
+    const p = this.state.page;
+    return {
+      isHome: p === 'home', isSchools: p === 'schools', isChurches: p === 'churches',
+      isSupport: p === 'support', isApp: p === 'app',
+      tabHome: this.tab('home'), tabSchools: this.tab('schools'), tabChurches: this.tab('churches'),
+      tabSupport: this.tab('support'), tabApp: this.tab('app'),
+      goHome: this.go('home'), goSchools: this.go('schools'), goChurches: this.go('churches'),
+      goSupport: this.go('support'), goApp: this.go('app')
+    };
+  }
+}
+</script>
+</body>
+</html>
