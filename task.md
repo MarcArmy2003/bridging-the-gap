@@ -23,5 +23,5 @@
 - [x] `src/app/privacy/page.tsx`: Create, integrate PrivacyWindowMotif and RingsOfConsentMotif.
 
 ## Final Steps
-- [ ] Verify build (`npm run build`).
-- [ ] Setup Next.js static export in `next.config.js` for GitHub Pages.
+- [x] Verify build (`npm run build`).
+- [x] Setup Next.js static export in `next.config.js` for GitHub Pages.
