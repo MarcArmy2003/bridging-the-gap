@@ -6,6 +6,6 @@
 - [x] Ensure OIDC metadata (name, email) maps correctly into `public.users`.
 
 ## Track 2: Mobile App (React Native Expo)
-- [ ] Create `src/styles/theme.ts` for React Native, porting the "Dusk Letter" tokens.
-- [ ] Refactor `App.tsx` and `src/navigation/AppNavigator.tsx` to apply brand routing.
-- [ ] Update primary screens (e.g., Home) with new typography and color tokens.
+- [x] Create `src/styles/theme.ts` for React Native, porting the "Dusk Letter" tokens.
+- [x] Refactor `App.tsx` and `src/navigation/AppNavigator.tsx` to apply brand routing.
+- [x] Update primary screens (e.g., Home) with new typography and color tokens.
