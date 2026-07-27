@@ -8,12 +8,12 @@
 - [x] `src/app/layout.tsx`: Update Footer (988 line, nav links).
 
 ## Phase 2: CSS Geometric Motifs
-- [ ] `src/components/motifs/HeroBridgeMotif.tsx`
-- [ ] `src/components/motifs/PrivacyWindowMotif.tsx`
-- [ ] `src/components/motifs/CircleOfSupportMotif.tsx`
-- [ ] `src/components/motifs/SchoolsPathwayMotif.tsx`
-- [ ] `src/components/motifs/VillageTableMotif.tsx`
-- [ ] `src/components/motifs/RingsOfConsentMotif.tsx`
+- [x] `src/components/motifs/HeroBridgeMotif.tsx`
+- [x] `src/components/motifs/PrivacyWindowMotif.tsx`
+- [x] `src/components/motifs/CircleOfSupportMotif.tsx`
+- [x] `src/components/motifs/SchoolsPathwayMotif.tsx`
+- [x] `src/components/motifs/VillageTableMotif.tsx`
+- [x] `src/components/motifs/RingsOfConsentMotif.tsx`
 
 ## Phase 3: Page Overhauls
 - [ ] `src/app/page.tsx` (Home): Integrate HeroBridgeMotif, apply alternating section rhythm.
