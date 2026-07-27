@@ -1,4 +1,4 @@
-# Safe Voice
+# Bridging the Gap
 ## Student Safety & Wellness Platform
 
 **Status:** Active Development  
@@ -7,9 +7,9 @@
 
 ---
 
-## 📋 About Safe Voice
+## 📋 About Bridging the Gap
 
-Safe Voice is a prevention-focused, role-based school safety and wellness platform designed to:
+Bridging the Gap is a prevention-focused, role-based school safety and wellness platform designed to:
 
 ✅ **Enable Students** to report concerns confidentially (bullying, mental health, safety)  
 ✅ **Support Counselors** with structured workflows and built-in guidance  
@@ -22,7 +22,17 @@ Safe Voice is a prevention-focused, role-based school safety and wellness platfo
 
 ## 🚀 Quick Start
 
-### Prerequisites
+### 🌐 Hosting the Website (GitHub Pages)
+
+Because the website (`saving-grace-website`) is a static Next.js export, it can be hosted natively and for free on your GitHub repository!
+
+**How to activate your live website:**
+1. In your GitHub repository, go to **Settings** > **Pages**.
+2. Under **Build and deployment > Source**, select **GitHub Actions**.
+3. GitHub will auto-detect the Next.js project. Click **Configure** on the suggested Next.js workflow and commit the file. 
+4. Your site will automatically build and deploy. Once finished, the live URL will be displayed at the top of the Settings > Pages screen!
+
+### 📱 Local Development Prerequisites
 - Node.js 18+ (LTS recommended)
 - npm or yarn
 - Expo CLI: `npm install -g expo-cli`
