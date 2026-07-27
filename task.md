@@ -1,27 +1,11 @@
-# Frontend Build Tasks
+# Bridging the Gap: Dual-Track Execution
 
-## Phase 1: Core Theming & Typography
-- [x] `src/styles/theme.ts`: Inject Dusk Letter palette and new geometric tokens.
-- [x] `src/app/layout.tsx`: Add Google Fonts (Newsreader, Karla, IBM Plex Mono).
-- [x] `src/app/layout.tsx`: Build the 988 Crisis Line sticky top bar.
-- [x] `src/app/layout.tsx`: Update PageHeader (wordmark, nav links).
-- [x] `src/app/layout.tsx`: Update Footer (988 line, nav links).
+## Track 1: Backend Architecture (Supabase OIDC Linking)
+- [ ] Create Supabase migration file for OIDC linking.
+- [ ] Implement `auth.users` to `public.users` trigger for automatic user creation.
+- [ ] Ensure OIDC metadata (name, email) maps correctly into `public.users`.
 
-## Phase 2: CSS Geometric Motifs
-- [x] `src/components/motifs/HeroBridgeMotif.tsx`
-- [x] `src/components/motifs/PrivacyWindowMotif.tsx`
-- [x] `src/components/motifs/CircleOfSupportMotif.tsx`
-- [x] `src/components/motifs/SchoolsPathwayMotif.tsx`
-- [x] `src/components/motifs/VillageTableMotif.tsx`
-- [x] `src/components/motifs/RingsOfConsentMotif.tsx`
-
-## Phase 3: Page Overhauls
-- [x] `src/app/page.tsx` (Home): Integrate HeroBridgeMotif, apply alternating section rhythm.
-- [x] `src/app/get-support/page.tsx`: Create intake framing, integrate CircleOfSupportMotif.
-- [x] `src/app/schools/page.tsx`: Early response messaging, integrate SchoolsPathwayMotif.
-- [x] `src/app/community/page.tsx`: Create (replaces churches), integrate VillageTableMotif.
-- [x] `src/app/privacy/page.tsx`: Create, integrate PrivacyWindowMotif and RingsOfConsentMotif.
-
-## Final Steps
-- [x] Verify build (`npm run build`).
-- [x] Setup Next.js static export in `next.config.js` for GitHub Pages.
+## Track 2: Mobile App (React Native Expo)
+- [ ] Create `src/styles/theme.ts` for React Native, porting the "Dusk Letter" tokens.
+- [ ] Refactor `App.tsx` and `src/navigation/AppNavigator.tsx` to apply brand routing.
+- [ ] Update primary screens (e.g., Home) with new typography and color tokens.
