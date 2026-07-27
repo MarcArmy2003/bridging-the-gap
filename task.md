@@ -1,11 +1,11 @@
 # Frontend Build Tasks
 
 ## Phase 1: Core Theming & Typography
-- [ ] `src/styles/theme.ts`: Inject Dusk Letter palette and new geometric tokens.
-- [ ] `src/app/layout.tsx`: Add Google Fonts (Newsreader, Karla, IBM Plex Mono).
-- [ ] `src/app/layout.tsx`: Build the 988 Crisis Line sticky top bar.
-- [ ] `src/app/layout.tsx`: Update PageHeader (wordmark, nav links).
-- [ ] `src/app/layout.tsx`: Update Footer (988 line, nav links).
+- [x] `src/styles/theme.ts`: Inject Dusk Letter palette and new geometric tokens.
+- [x] `src/app/layout.tsx`: Add Google Fonts (Newsreader, Karla, IBM Plex Mono).
+- [x] `src/app/layout.tsx`: Build the 988 Crisis Line sticky top bar.
+- [x] `src/app/layout.tsx`: Update PageHeader (wordmark, nav links).
+- [x] `src/app/layout.tsx`: Update Footer (988 line, nav links).
 
 ## Phase 2: CSS Geometric Motifs
 - [ ] `src/components/motifs/HeroBridgeMotif.tsx`
