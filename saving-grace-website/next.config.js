@@ -1,10 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  images: {
-    unoptimized: true,
-  },
-  basePath: '/bridging-the-gap',
+  /* config options here */
 };
 
 export default nextConfig;
